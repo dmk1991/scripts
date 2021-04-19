@@ -8,7 +8,7 @@ def print_spacer():
 
 def update_branch(branch):
     formatted_branch = branch.replace('* ', '').strip()
-    pull_cmd = f'git checkout {formatted_branch} && git pull'
+    pull_cmd = f'git fetch origin {formatted_branch}:{formatted_branch}'
     pull_stream = os.popen(pull_cmd)
 
     for line in pull_stream.readlines():
